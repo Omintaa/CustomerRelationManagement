@@ -40,10 +40,12 @@ body{
     border-radius: 50%;
 }
 
+
+
 form{
     margin:100px auto;
     width:100%;
-    max-width:500px;
+    max-width:300px;
     padding:30px;
     background:#fff;
     border-radius: 30px;

@@ -85,30 +85,33 @@
     </div>
 
     <script>
-      //    function filledForm(e){
-      //         e.preventDefault()
-      //         const email=document.getElementById('email').value
-      //         const password=document.getElementById('password').value
-      //         if(email==='ella@gmail.com' && password==='elaa'){
-      //             alert('Login Successful')
-      //         }else{
-      //             alert('Wrong username or password')
-      //         }
-      //     }
-      //  document.getElementById('form').addEventListener('submit',filledForm())
 
       document.getElementById("form").addEventListener("submit", function (e) {
         e.preventDefault(); // stops form from refreshing the page
 
         const email = document.getElementById("email").value;
         const password = document.getElementById("password").value;
+  const user1={
+        email:email,
+        password:password
+        
+      };
+      localStorage.setItem('user1', JSON.stringify(user1))
 
         if (email === "adwoa@gmail.com" && password === "adwoa") {
-          alert("Login successful!");
-        } else {
+            alert("Login successful!"); 
+            window.location.href='index.html';
+        
+        } else if(email==="adwoa@gmail.com"&& password!="adwoa"){
+            alert("how can you forget your password");
+        document.getElementById('password').value=""
+        }else{
           alert("Oops, you want to steal my system.");
+        document.getElementById('email').value=""
+        document.getElementById('password').value=""
         }
       });
+    //   windows.location='http://127.0.0.1:5500/index.html' &&   
     </script>
   </body>
 </html>
