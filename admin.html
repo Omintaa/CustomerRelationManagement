@@ -4,8 +4,139 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Page </title>
+<script src="https://kit.fontawesome.com/361b1c3323.js" crossorigin="anonymous"></script>
+    <style>
+          *{
+    margin:0;
+    padding:0;
+    font-family: 'Poppins',sans-serif;
+}
+body{background: #2a2a44;
+        color: #6969d5;
+        margin: auto;
+}
+.navbar{
+    display:flex;
+    justify-content: space-between;
+    padding:10px;
+}
+.logo{
+    width:50px;
+    height:50px;
+    margin-left:40px;
+   
+}
+.nav-list{
+    list-style: none;
+    display:flex;
+    align-items: center;
+    margin-right: 40PX;
+}
+.nav-list li{
+    margin-left:10px;
+}
+.nav-list li p{
+    color:#fff;
+    font-weight: 300;
+
+}
+.nav-list img{
+    width:40px;
+    height:40px;
+    border-radius: 50%;
+}
+
+.request-page{
+    margin:100px auto;
+    background: #fff;
+      border-radius: 20px;
+      width: 100%;
+      max-width: 600px;
+      height: 100%;
+      padding: 20px;
+}
+.request-page h2{
+      text-align: center;
+}
+.request{
+    display: flex;
+    justify-content: center;
+    padding-top: 40px;
+
+}
+
+table td{
+    padding: 20px;
+    
+}
+    </style>
 </head>
+
 <body>
+ <nav class="navbar">
+            <img src="images/crmlogo.png" class="logo" alt="logo">
+            <ul class="nav-list">
+            <li><p>Staff</p></li>
+            <li><img src="images/profile.jpg" alt="userprofile"></li>
+        </ul>
+    </nav>
+
+  <div class="request-page">  
+    <h2>Submitted Leave Requests</h2>
+<div class="request">
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Date</th>
+            <th>Action</th>
+        </tr>
+        <tr>
+            <td> Adwoa Pokua</td>
+            <td>adwoa@gmail.com</td>
+            <td>10-March-2025</td>
+            <td><i class="fa fa-eye" aria-hidden="true"></i></td>
+        </tr>
+        <tr>
+            <td>Ella</td>
+            <td>ella@gmail.com</td>
+            <td>19-May-2025</td>
+             <td><i class="fa fa-eye" aria-hidden="true"></i></td>
+        </tr>
+          <tr>
+            <td>Ama</td>
+            <td>ama@gmail.com</td>
+            <td>1-June-2025</td>
+             <td><i class="fa fa-eye" aria-hidden="true"></i></td>
+        </tr>
+          <tr>
+            <td>Kwabena</td>
+            <td>kobby@gmail.com</td>
+            <td>19-October-2025</td>
+             <td><i class="fa fa-eye" aria-hidden="true"></i></td>
+        </tr>
+          <tr>
+            <td>Afia</td>
+            <td>afia@gmail.com</td>
+            <td>19-April-2025</td>
+             <td><i class="fa fa-eye" aria-hidden="true"></i></td>
+        </tr>
+          <tr>
+            <td>Kwame</td>
+            <td>kwame@gmail.com</td>
+            <td>19-February-2025</td>
+             <td><i class="fa fa-eye" aria-hidden="true"></i></td>
+        </tr>
+          <tr>
+            <td>Kofi</td>
+            <td>Kofi@gmail.com</td>
+            <td>19-August-2025</td>
+             <td><i class="fa fa-eye" aria-hidden="true"></i></td>
+        </tr>
+
+    </table>
+</div>
+</div>
     
 </body>
 </html>
