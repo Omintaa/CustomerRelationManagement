@@ -137,22 +137,40 @@ form {
   
 
       <script>
-        document.getElementById('form').addEventListener('submit',function(e){
-        e.preventDefault();
-        alert('request has been submitted, you lazy worker')
-        window.location.reload();
-        const name=document.getElementById('name').value;
-        const email=document.getElementById('email').value
-        const reason=document.getElementById('req-reason').value;
+          function check_user_email(email) {
+            var local_user = JSON.parse(localStorage.getItem('user1'))
+             console.log('email', local_user.email)
 
-       const request1={
-          name:name,
-          email:email,
-          reason:reason
-        }
-        localStorage.setItem("request1",JSON.stringify(request1))
-     
-      })
+              if (email === local_user.email){
+                  return true
+              }
+              return false
+          }
+
+        function save_request(e){
+            const email=document.getElementById('email').value
+            const name=document.getElementById('name').value;
+            const reason=document.getElementById('req-reason').value;
+
+            var is_true = check_user_email(email)
+            if (is_true)
+            {
+                e.preventDefault();
+                alert('request has been submitted, you lazy worker')
+                window.location.reload();
+               const request1={
+                  name:name,
+                  email:email,
+                  reason:reason
+                }
+                localStorage.setItem("request1",JSON.stringify(request1))
+            }
+            else{
+                alert("Please enter the same email used to login")
+            }
+            }
+
+            document.getElementById('form').addEventListener('submit', (e) => save_request(e))
       </script>
 </body>
 </html>
