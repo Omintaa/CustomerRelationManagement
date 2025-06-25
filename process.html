@@ -3,10 +3,158 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Processt</title>
+    <title>Process Request</title>
+    <script src="https://kit.fontawesome.com/361b1c3323.js" crossorigin="anonymous"></script>
+     <style>
+        *{
+    margin:0;
+    padding:0;
+    font-family: 'Poppins',sans-serif;
+}
+body{background: #2a2a44;
+        color: #6969d5;
+        margin: auto;
+}
+.navbar{
+    display:flex;
+    justify-content: space-between;
+    padding:10px;
+}
+.logo{
+    width:50px;
+    height:50px;
+    margin-left:40px;
+   
+}
+.nav-list{
+    list-style: none;
+    display:flex;
+    align-items: center;
+    margin-right: 40PX;
+}
+.nav-list li{
+    margin-left:10px;
+}
+.nav-list li p{
+    color:#fff;
+    font-weight: 300;
+
+}
+.nav-list img{
+    width:40px;
+    height:40px;
+    border-radius: 50%;
+}
+ .requestform {
+        margin: 100px auto;
+        background: #fff;
+        border-radius: 20px;
+        width: 100%;
+        max-width: 350px;
+        padding: 30px;
+        text-align: center;
+        justify-content: center;
+        text-align: center;
+        align-items: center;
+      
+      }
+
+       .fill {
+        margin: 30px 0px 10px 40px;
+        display: flex;
+      }
+
+      label{
+        display: flex;
+        align-self: flex-start;
+        margin-right: 20px;
+        width: 60px;
+
+      }
+
+      
+       button{margin-top: 30px;
+        color: #fff;
+        background-color: #6969d5;
+        width: 100px;
+        height: 30px;
+        border-radius: 5px;
+        border: none;
+        font-weight: 600;
+       }
+      .popup{
+        padding: 40px;
+         margin: 100px auto;
+        background: #fff;
+        border-radius: 20px;
+        width: 100%;
+        max-width: 350px;
+        display: none;
+      }
+      .popup i{
+        background-color: red;
+        color: white;
+        padding: 2px;
+        border-radius: 2px;
+    float: right;
+    margin-bottom: 20px;
+      }
+
+    </style>
 </head>
 <body>
+  <nav class="navbar">
+            <img src="images/crmlogo.png" class="logo" alt="logo">
+            <ul class="nav-list">
+            <li><p>Admin</p></li>
+            <li><img src="images/profile.jpg" alt="userprofile"></li>
+        </ul>
+    </nav>
+  
+    <div class="requestform">
+         <h2>Process Request Form</h2>
+<div class="fill">
+    <label for="name">Name</label>
+<p>Adwoa</p>
+</div>
+<div class="fill" >
+    <label for="email">Email</label>
+    <p>adwoa@gmail.com</p>
+</div>
+<div class="fill">
+    <label for="reason">Reason</label>
+   <p>I need the week off for rest and peace  of mindb because I've been working non-stop and no one pays me for the extra work</p>
+</div>
+
+     <button id="approve" style="background-color: green; ">Approve</button>
+      <button id="reject" style="background-color: red;">Reject</button>
     
+</div>   
+   <div class="popup" id="popUp">
+    <i class="fa fa-close" aria-hidden="true" id="close"></i>
+<br>
+        <p >Reason for rejection</p>
+        <input type="text"
+            id="rej-reason"
+            placeholder="Enter your reason for rejection"
+            required style="width: 100%; height:60px">
+              <button id="rejbutton">Submit reason</button>
+      </div>
+
+
+<script>
+document.getElementById('approve').addEventListener('click',function(){
+    alert("One excuse after the other, that's how this mighty company will falls");
+window.location.href="admin.html";
+});
+document.getElementById("reject").addEventListener('click', function(){
+    document.getElementById("popUp").style.display='block';
+});
+document.getElementById("close").addEventListener('click',function(){
+    document.getElementById("popUp").style.display="none";
+})
+
+</script>
 </body>
 </html>
 

@@ -89,9 +89,7 @@
         const email = document.getElementById("email").value;
         const password = document.getElementById("password").value;
   const user1={
-        email:email,
-        password:password
-        
+        email:email,        
       };
       localStorage.setItem('user1', JSON.stringify(user1))
 
@@ -102,13 +100,17 @@
         } else if(email==="adwoa@gmail.com"&& password!="adwoa"){
             alert("how can you forget your password");
         document.getElementById('password').value=""
+
+        } else if(email==="admin@gmail.com" && password==="admin"){
+          alert("let's make someone life hell by rejecting request");
+          window.location.href='admin.html';
         }else{
-          alert("Oops, you want to steal my system.");
+          alert("Oops, do you want to steal my system?.");
         document.getElementById('email').value=""
         document.getElementById('password').value=""
         }
       });
-    //   windows.location='http://127.0.0.1:5500/index.html' &&   
+     
     </script>
   </body>
 </html>

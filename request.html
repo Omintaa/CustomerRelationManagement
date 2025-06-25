@@ -148,6 +148,7 @@ form {
           }
 
         function save_request(e){
+          e.preventDefault();
             const email=document.getElementById('email').value
             const name=document.getElementById('name').value;
             const reason=document.getElementById('req-reason').value;
@@ -156,17 +157,21 @@ form {
             if (is_true)
             {
                 e.preventDefault();
-                alert('request has been submitted, you lazy worker')
                 window.location.reload();
+                const reqTime=new Date().toLocaleString();
                const request1={
                   name:name,
                   email:email,
-                  reason:reason
+                  reason:reason,
+                  time:reqTime
                 }
                 localStorage.setItem("request1",JSON.stringify(request1))
+                 alert('request has been submitted, you lazy worker')
             }
             else{
+              window.location.href='request.html';
                 alert("Please enter the same email used to login")
+
             }
             }
 
