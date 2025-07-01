@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="index.cs">
+    <!-- <link rel="stylesheet" href="index.cs"> -->
     <title>Customer Relation Management System</title>
     <style>
         *{
@@ -110,7 +110,7 @@ form {
          <form class="request-form" id="form" method="post">
             <h2>Request Leave Form</h2>
         <div class="fill">
-          <label for="name" > Name</label>
+          <label for="text" > Name</label>
           <input
             type="name"
             id="name"
@@ -138,8 +138,8 @@ form {
 
       <script>
           function check_user_email(email) {
-            var local_user = JSON.parse(localStorage.getItem('user1'))
-             console.log('email', local_user.email)
+            var local_user = JSON.parse(localStorage.getItem('user'))
+            //  console.log('email', local_user.email)
 
               if (email === local_user.email){
                   return true
@@ -158,15 +158,19 @@ form {
             {
                 e.preventDefault();
                 window.location.reload();
-                const reqTime=new Date().toLocaleString();
-               const request1={
+                const reqTime=new Date().toLocaleDateString();
+               const request={
                   name:name,
                   email:email,
                   reason:reason,
                   time:reqTime
                 }
-                localStorage.setItem("request1",JSON.stringify(request1))
+                let allRequest=[request];
+                // console.log(allRequest)
+            
+                localStorage.setItem("allRequest",JSON.stringify(allRequest))
                  alert('request has been submitted, you lazy worker')
+                 window.location.href='index.html'
             }
             else{
               window.location.href='request.html';

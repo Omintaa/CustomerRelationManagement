@@ -88,10 +88,10 @@
 
         const email = document.getElementById("email").value;
         const password = document.getElementById("password").value;
-  const user1={
-        email:email,        
+  const user={
+        email:email, 
       };
-      localStorage.setItem('user1', JSON.stringify(user1))
+      localStorage.setItem('user', JSON.stringify(user))
 
         if (email === "adwoa@gmail.com" && password === "adwoa") {
             alert("Login successful!"); 

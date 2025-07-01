@@ -84,23 +84,24 @@ table td{
   <div class="request-page">  
     <h2>Submitted Leave Requests</h2>
 <div class="request">
-    <table>
-        <tr>
+    <table id="table">
+        <thead>
             <th>Name</th>
             <th>Email</th>
             <th>Date</th>
             <th>Action</th>
-        </tr>
-        <tr>
-            <td> Adwoa Pokua</td>
-            <td>adwoa@gmail.com</td>
-            <td>10-March-2025</td>
+        </thead>
+        <tbody id="tbody">
+       <!--  <tr>
+            <td id="name"> </td>
+            <td id="email">adwoa@gmail.com</td>
+            <td id="date">10-March-2025</td>
             <td><i class="fa fa-eye" aria-hidden="true" onclick="window.location.href='process.html' "></i></td>
         </tr>
         <tr>
-            <td>Ella</td>
-            <td>ella@gmail.com</td>
-            <td>19-May-2025</td>
+            <td id="name">Ella</td>
+            <td id="email">ella@gmail.com</td>
+            <td id="date">19-May-2025</td>
              <td><i class="fa fa-eye" aria-hidden="true"></i></td>
         </tr>
           <tr>
@@ -116,27 +117,55 @@ table td{
              <td><i class="fa fa-eye" aria-hidden="true"></i></td>
         </tr>
           <tr>
-            <td>Afia</td>
-            <td>afia@gmail.com</td>
-            <td>19-April-2025</td>
-             <td><i class="fa fa-eye" aria-hidden="true"></i></td>
-        </tr>
-          <tr>
-            <td>Kwame</td>
-            <td>kwame@gmail.com</td>
-            <td>19-February-2025</td>
-             <td><i class="fa fa-eye" aria-hidden="true"></i></td>
-        </tr>
-          <tr>
             <td>Kofi</td>
             <td>Kofi@gmail.com</td>
             <td>19-August-2025</td>
              <td><i class="fa fa-eye" aria-hidden="true"></i></td>
-        </tr>
-
+        </tr> -->
+</tbody>
     </table>
 </div>
 </div>
     
 </body>
+<script>
+var userRequest= JSON.parse(localStorage.getItem('allRequest'))
+console.log(userRequest)
+
+// userRequest.forEach(data => {
+//     const name=document.getElementById('name')
+//     name.append(data.name)
+    
+// });
+
+  const tableBody = document.querySelector("#table tbody");
+userRequest.forEach(data => { 
+
+    const row=document.createElement('tr')
+
+    const td1=document.createElement('td')
+     td1.textContent = data.name;
+    const td2=document.createElement('td')
+    td2.textContent=data.email;
+      const td3=document.createElement('td')
+      td3.textContent=data.time;
+
+      const td4=document.createElement('td')
+      const icon = document.createElement('i');
+      icon.className = 'fas fa-eye'; 
+      icon.style.cursor = 'pointer';
+    icon.addEventListener('click', function(){
+        window.location.href='process.html'
+    })
+        row.appendChild(td1);
+row.appendChild(td2);
+row.appendChild(td3);
+td4.appendChild(icon);
+row.appendChild(td4)
+  tableBody.appendChild(row);
+
+
+
+});
+</script>
 </html>
