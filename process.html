@@ -58,11 +58,11 @@ body{background: #2a2a44;
         align-items: center;
       
       }
-
-       .fill {
-        margin: 30px 0px 10px 40px;
-        display: flex;
-      }
+      /* the elements created in the js */
+    #formfield div{
+margin: 50px;
+display: flex;
+    }
 
       label{
         display: flex;
@@ -72,7 +72,7 @@ body{background: #2a2a44;
 
       }
 
-      
+      /* elements created in js ends */
        button{margin-top: 30px;
         color: #fff;
         background-color: #6969d5;
@@ -100,6 +100,7 @@ body{background: #2a2a44;
     margin-bottom: 20px;
       }
 
+
     </style>
 </head>
 <body>
@@ -113,17 +114,19 @@ body{background: #2a2a44;
   
     <div class="requestform">
          <h2>Process Request Form</h2>
-<div class="fill">
+         <div class="formfield" id="formfield">
+<!-- <div class="fill" id="fill">
     <label for="name">Name</label>
 <p>Adwoa</p>
 </div>
-<div class="fill" >
+<div class="fill" id="fill">
     <label for="email">Email</label>
     <p>adwoa@gmail.com</p>
 </div>
-<div class="fill">
+<div class="fill" id="fill">
     <label for="reason">Reason</label>
    <p>I need the week off for rest and peace  of mindb because I've been working non-stop and no one pays me for the extra work</p>
+</div> -->
 </div>
 
      <button id="approve" style="background-color: green; ">Approve</button>
@@ -143,6 +146,52 @@ body{background: #2a2a44;
 
 
 <script>
+    processRequest=JSON.parse(localStorage.getItem('allRequest'))
+console.log(processRequest)
+
+const formField=document.querySelector('#formfield');
+processRequest.forEach(data => {
+    const nameField=document.createElement('div')
+    const label1=document.createElement('label')
+    label1.textContent='Name'
+    const name=document.createElement('p')
+    name.textContent=data.name
+
+    const emailField=document.createElement('div')
+    const label2=document.createElement('label')
+    label2.textContent='email'
+const email=document.createElement('p')
+email.textContent=data.email
+
+const reasonField=document.createElement('div')
+const label3=document.createElement('label')
+label3.textContent='Reason'
+const reason=document.createElement('p')
+reason.textContent=data.reason
+
+nameField.appendChild(label1)
+nameField.appendChild(name)
+
+emailField.appendChild(label2)
+emailField.appendChild(email)
+
+reasonField.appendChild(label3)
+reasonField.appendChild(reason)
+
+formField.appendChild(nameField)
+formField.appendChild(emailField)
+formField.appendChild(reasonField)
+
+
+
+    // fillContent.appendChild(name)
+    // fillContent.appendChild(email)
+
+    
+});
+
+
+
 document.getElementById('approve').addEventListener('click',function(){
     alert("One excuse after the other, that's how this mighty company will falls");
 window.location.href="admin.html";
