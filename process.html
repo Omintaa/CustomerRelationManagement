@@ -1,51 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Process Request</title>
-    <script src="https://kit.fontawesome.com/361b1c3323.js" crossorigin="anonymous"></script>
-     <style>
-        *{
-    margin:0;
-    padding:0;
-    font-family: 'Poppins',sans-serif;
-}
-body{background: #2a2a44;
+    <script
+      src="https://kit.fontawesome.com/361b1c3323.js"
+      crossorigin="anonymous"
+    ></script>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        font-family: "Poppins", sans-serif;
+      }
+      body {
+        background: #2a2a44;
         color: #6969d5;
         margin: auto;
-}
-.navbar{
-    display:flex;
-    justify-content: space-between;
-    padding:10px;
-}
-.logo{
-    width:50px;
-    height:50px;
-    margin-left:40px;
-   
-}
-.nav-list{
-    list-style: none;
-    display:flex;
-    align-items: center;
-    margin-right: 40PX;
-}
-.nav-list li{
-    margin-left:10px;
-}
-.nav-list li p{
-    color:#fff;
-    font-weight: 300;
-
-}
-.nav-list img{
-    width:40px;
-    height:40px;
-    border-radius: 50%;
-}
- .requestform {
+      }
+      .navbar {
+        display: flex;
+        justify-content: space-between;
+        padding: 10px;
+      }
+      .logo {
+        width: 50px;
+        height: 50px;
+        margin-left: 40px;
+      }
+      .nav-list {
+        list-style: none;
+        display: flex;
+        align-items: center;
+        margin-right: 40px;
+      }
+      .nav-list li {
+        margin-left: 10px;
+      }
+      .nav-list li p {
+        color: #fff;
+        font-weight: 300;
+      }
+      .nav-list img {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+      }
+      .requestform {
         margin: 100px auto;
         background: #fff;
         border-radius: 20px;
@@ -56,24 +58,23 @@ body{background: #2a2a44;
         justify-content: center;
         text-align: center;
         align-items: center;
-      
       }
       /* the elements created in the js */
-    #formfield div{
-margin: 50px;
-display: flex;
-    }
+      #formfield div {
+        margin: 50px;
+        display: flex;
+      }
 
-      label{
+      label {
         display: flex;
         align-self: flex-start;
         margin-right: 20px;
         width: 60px;
-
       }
 
       /* elements created in js ends */
-       button{margin-top: 30px;
+      button {
+        margin-top: 30px;
         color: #fff;
         background-color: #6969d5;
         width: 100px;
@@ -81,41 +82,39 @@ display: flex;
         border-radius: 5px;
         border: none;
         font-weight: 600;
-       }
-      .popup{
+      }
+      .popup {
         padding: 40px;
-         margin: 100px auto;
+        margin: 100px auto;
         background: #fff;
         border-radius: 20px;
         width: 100%;
         max-width: 350px;
         display: none;
       }
-      .popup i{
+      .popup i {
         background-color: red;
         color: white;
         padding: 2px;
         border-radius: 2px;
-    float: right;
-    margin-bottom: 20px;
+        float: right;
+        margin-bottom: 20px;
       }
-
-
     </style>
-</head>
-<body>
-  <nav class="navbar">
-            <img src="images/crmlogo.png" class="logo" alt="logo">
-            <ul class="nav-list">
-            <li><p>Admin</p></li>
-            <li><img src="images/profile.jpg" alt="userprofile"></li>
-        </ul>
+  </head>
+  <body>
+    <nav class="navbar">
+      <img src="images/crmlogo.png" class="logo" alt="logo" />
+      <ul class="nav-list">
+        <li><p>Admin</p></li>
+        <li><img src="images/profile.jpg" alt="userprofile" /></li>
+      </ul>
     </nav>
-  
+
     <div class="requestform">
-         <h2>Process Request Form</h2>
-         <div class="formfield" id="formfield">
-<!-- <div class="fill" id="fill">
+      <h2>Process Request Form</h2>
+      <div class="formfield" id="formfield">
+        <!-- <div class="fill" id="fill">
     <label for="name">Name</label>
 <p>Adwoa</p>
 </div>
@@ -127,90 +126,95 @@ display: flex;
     <label for="reason">Reason</label>
    <p>I need the week off for rest and peace  of mindb because I've been working non-stop and no one pays me for the extra work</p>
 </div> -->
-</div>
-
-     <button id="approve" style="background-color: green; ">Approve</button>
-      <button id="reject" style="background-color: red;">Reject</button>
-    
-</div>   
-   <div class="popup" id="popUp">
-    <i class="fa fa-close" aria-hidden="true" id="close"></i>
-<br>
-        <p >Reason for rejection</p>
-        <input type="text"
-            id="rej-reason"
-            placeholder="Enter your reason for rejection"
-            required style="width: 100%; height:60px">
-              <button id="rejbutton">Submit reason</button>
       </div>
 
+      <button id="approve" style="background-color: green">Approve</button>
+      <button id="reject" style="background-color: red">Reject</button>
+    </div>
+    <form class="popup" id="popUp">
+      <i class="fa fa-close" aria-hidden="true" id="close"></i>
+      <br />
+      <p>Reason for rejection</p>
+      <input
+        type="text"
+        id="rej-reason"
+        placeholder="Enter your reason for rejection"
+        required
+        style="width: 100%; height: 60px"
+      />
+      <button type="submit">Submit reason</button>
+    </form>
 
-<script>
-    processRequest=JSON.parse(localStorage.getItem('allRequest'))
-console.log(processRequest)
+    <script>
+      processRequest = JSON.parse(localStorage.getItem("allRequest"));
+      // console.log(processRequest)
 
-const formField=document.querySelector('#formfield');
-processRequest.forEach(data => {
-    const nameField=document.createElement('div')
-    const label1=document.createElement('label')
-    label1.textContent='Name'
-    const name=document.createElement('p')
-    name.textContent=data.name
+      const formField = document.querySelector("#formfield");
+      processRequest.forEach((data) => {
+        const nameField = document.createElement("div");
+        const label1 = document.createElement("label");
+        label1.textContent = "Name";
+        const name = document.createElement("p");
+        name.textContent = data.name;
 
-    const emailField=document.createElement('div')
-    const label2=document.createElement('label')
-    label2.textContent='email'
-const email=document.createElement('p')
-email.textContent=data.email
+        const emailField = document.createElement("div");
+        const label2 = document.createElement("label");
+        label2.textContent = "email";
+        const email = document.createElement("p");
+        email.textContent = data.email;
 
-const reasonField=document.createElement('div')
-const label3=document.createElement('label')
-label3.textContent='Reason'
-const reason=document.createElement('p')
-reason.textContent=data.reason
+        const reasonField = document.createElement("div");
+        const label3 = document.createElement("label");
+        label3.textContent = "Reason";
+        const reason = document.createElement("p");
+        reason.textContent = data.reason;
 
-nameField.appendChild(label1)
-nameField.appendChild(name)
+        nameField.appendChild(label1);
+        nameField.appendChild(name);
 
-emailField.appendChild(label2)
-emailField.appendChild(email)
+        emailField.appendChild(label2);
+        emailField.appendChild(email);
 
-reasonField.appendChild(label3)
-reasonField.appendChild(reason)
+        reasonField.appendChild(label3);
+        reasonField.appendChild(reason);
 
-formField.appendChild(nameField)
-formField.appendChild(emailField)
-formField.appendChild(reasonField)
+        formField.appendChild(nameField);
+        formField.appendChild(emailField);
+        formField.appendChild(reasonField);
 
+        // fillContent.appendChild(name)
+        // fillContent.appendChild(email)
+      });
 
+      document.getElementById("approve").addEventListener("click", function () {
+        alert(
+          "One excuse after the other, that's how this mighty company will falls"
+        );
+        window.location.href = "admin.html";
+      });
+      document.getElementById("reject").addEventListener("click", function () {
+        document.getElementById("popUp").style.display = "block";
+      });
+      document.getElementById("close").addEventListener("click", function () {
+        document.getElementById("popUp").style.display = "none";
+      });
 
-    // fillContent.appendChild(name)
-    // fillContent.appendChild(email)
+      document.getElementById("popUp").addEventListener("submit", function (e) {
+        e.preventDefault();
 
-    
-});
+        const rejReason = document.getElementById("rej-reason").value;
+        const rejectReason = {
+          rejReason: rejReason,
+        };
+        localStorage.setItem("rejectReason", JSON.stringify(rejectReason));
 
+        window.location.href = "admin.html";
 
-
-document.getElementById('approve').addEventListener('click',function(){
-    alert("One excuse after the other, that's how this mighty company will falls");
-window.location.href="admin.html";
-});
-document.getElementById("reject").addEventListener('click', function(){
-    document.getElementById("popUp").style.display='block';
-});
-document.getElementById("close").addEventListener('click',function(){
-    document.getElementById("popUp").style.display="none";
-})
-
-</script>
-</body>
+        console.log(rejectReason);
+      });
+    </script>
+  </body>
 </html>
-
-
-
-
-
 
 <!-- *{
     margin:0;

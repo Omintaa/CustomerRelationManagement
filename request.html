@@ -1,51 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- <link rel="stylesheet" href="index.cs"> -->
     <title>Customer Relation Management System</title>
     <style>
-        *{
-    margin:0;
-    padding:0;
-    font-family: 'Poppins',sans-serif;
-}
-body{background: #2a2a44;
+      * {
+        margin: 0;
+        padding: 0;
+        font-family: "Poppins", sans-serif;
+      }
+      body {
+        background: #2a2a44;
         color: #6969d5;
         margin: auto;
-}
-.navbar{
-    display:flex;
-    justify-content: space-between;
-    padding:10px;
-}
-.logo{
-    width:50px;
-    height:50px;
-    margin-left:40px;
-   
-}
-.nav-list{
-    list-style: none;
-    display:flex;
-    align-items: center;
-    margin-right: 40PX;
-}
-.nav-list li{
-    margin-left:10px;
-}
-.nav-list li p{
-    color:#fff;
-    font-weight: 300;
-
-}
-.nav-list img{
-    width:40px;
-    height:40px;
-    border-radius: 50%;
-}
-form {
+      }
+      .navbar {
+        display: flex;
+        justify-content: space-between;
+        padding: 10px;
+      }
+      .logo {
+        width: 50px;
+        height: 50px;
+        margin-left: 40px;
+      }
+      .nav-list {
+        list-style: none;
+        display: flex;
+        align-items: center;
+        margin-right: 40px;
+      }
+      .nav-list li {
+        margin-left: 10px;
+      }
+      .nav-list li p {
+        color: #fff;
+        font-weight: 300;
+      }
+      .nav-list img {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+      }
+      form {
         margin: 100px auto;
         background: #fff;
         border-radius: 20px;
@@ -64,28 +63,28 @@ form {
         /* outline: none;
         border: none; */
         margin-left: 10px;
-        width:170px;
+        width: 170px;
       }
 
-.fill textarea{
-    width:240px;
-    height:80px;
-    resize: none;
-    padding:8px;
-    border-radius:8px;
-    margin-left: 10px;
-}
+      .fill textarea {
+        width: 240px;
+        height: 80px;
+        resize: none;
+        padding: 8px;
+        border-radius: 8px;
+        margin-left: 10px;
+      }
 
-#reason{
-     align-items: center;
-    justify-content: center; 
-    display: flex;
-    flex-direction: column;
-    gap:10px;
-}
-#reason label{
-    margin-left:-120px;
-}
+      #reason {
+        align-items: center;
+        justify-content: center;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+      #reason label {
+        margin-left: -120px;
+      }
       button {
         margin-top: 30px;
         color: #fff;
@@ -95,91 +94,88 @@ form {
         border-radius: 5px;
         border: none;
       }
-
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <nav class="navbar">
-            <img src="images/crmlogo.png" class="logo" alt="logo">
-            <ul class="nav-list">
-            <li><p>Staff</p></li>
-            <li><img src="images/profile.jpg" alt="userprofile"></li>
-        </ul>
+      <img src="images/crmlogo.png" class="logo" alt="logo" />
+      <ul class="nav-list">
+        <li><p>Staff</p></li>
+        <li><img src="images/profile.jpg" alt="userprofile" /></li>
+      </ul>
     </nav>
-       
-         <form class="request-form" id="form" method="post">
-            <h2>Request Leave Form</h2>
-        <div class="fill">
-          <label for="text" > Name</label>
-          <input
-            type="name"
-            id="name"
-            placeholder="Enter your name"
-            required
-          />
-        </div>
-        <div class="fill" id="password-fill">
-          <label for="email"> Email</label>
-          <input
-            type="email"
-            id="email"
-            placeholder="Enter your email"
-            required
-          />
-        </div>
-       
-        <div class="fill" id="reason"> 
-             <label for="reason"> Reason for leave</label>
-             <textarea name="" id="req-reason" placeholder="  Explain why you need leave" ></textarea> </style></div>
 
-        <button type="submit">Submit</button>
-      </form>
-  
+    <form class="request-form" id="form" method="post">
+      <h2>Request Leave Form</h2>
+      <div class="fill">
+        <label for="text"> Name</label>
+        <input type="name" id="name" placeholder="Enter your name" required />
+      </div>
+      <div class="fill" id="password-fill">
+        <label for="email"> Email</label>
+        <input
+          type="email"
+          id="email"
+          placeholder="Enter your email"
+          required
+        />
+      </div>
 
-      <script>
-          function check_user_email(email) {
-            var local_user = JSON.parse(localStorage.getItem('user'))
-            //  console.log('email', local_user.email)
+      <div class="fill" id="reason">
+        <label for="reason"> Reason for leave</label>
+        <textarea
+          name=""
+          id="req-reason"
+          placeholder="  Explain why you need leave"
+        ></textarea>
+      </div>
 
-              if (email === local_user.email){
-                  return true
-              }
-              return false
-          }
+      <button type="submit">Submit</button>
+    </form>
 
-        function save_request(e){
+    <script>
+      function check_user_email(email) {
+        var local_user = JSON.parse(localStorage.getItem("user"));
+        //  console.log('email', local_user.email)
+
+        if (email === local_user.email) {
+          return true;
+        }
+        return false;
+      }
+
+      function save_request(e) {
+        e.preventDefault();
+        const email = document.getElementById("email").value;
+        const name = document.getElementById("name").value;
+        const reason = document.getElementById("req-reason").value;
+
+        var is_true = check_user_email(email);
+        if (is_true) {
           e.preventDefault();
-            const email=document.getElementById('email').value
-            const name=document.getElementById('name').value;
-            const reason=document.getElementById('req-reason').value;
+          window.location.reload();
+          const reqTime = new Date().toLocaleDateString();
+          const request = {
+            name: name,
+            email: email,
+            reason: reason,
+            time: reqTime,
+          };
+          let allRequest = [request];
+          // console.log(allRequest)
 
-            var is_true = check_user_email(email)
-            if (is_true)
-            {
-                e.preventDefault();
-                window.location.reload();
-                const reqTime=new Date().toLocaleDateString();
-               const request={
-                  name:name,
-                  email:email,
-                  reason:reason,
-                  time:reqTime
-                }
-                let allRequest=[request];
-                // console.log(allRequest)
-            
-                localStorage.setItem("allRequest",JSON.stringify(allRequest))
-                 alert('request has been submitted, you lazy worker')
-                 window.location.href='index.html'
-            }
-            else{
-              window.location.href='request.html';
-                alert("Please enter the same email used to login")
+          localStorage.setItem("allRequest", JSON.stringify(allRequest));
+          alert("request has been submitted, you lazy worker");
+          window.location.href = "index.html";
+        } else {
+          window.location.href = "request.html";
+          alert("Please enter the same email used to login");
+        }
+      }
 
-            }
-            }
-
-            document.getElementById('form').addEventListener('submit', (e) => save_request(e))
-      </script>
-</body>
+      document
+        .getElementById("form")
+        .addEventListener("submit", (e) => save_request(e));
+    </script>
+  </body>
 </html>

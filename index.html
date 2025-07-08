@@ -76,41 +76,36 @@
           />
         </div>
 
-      
         <button type="submit">Login</button>
       </form>
     </div>
 
     <script>
-
       document.getElementById("form").addEventListener("submit", function (e) {
         e.preventDefault(); // stops form from refreshing the page
 
         const email = document.getElementById("email").value;
         const password = document.getElementById("password").value;
-  const user={
-        email:email, 
-      };
-      localStorage.setItem('user', JSON.stringify(user))
+        const user = {
+          email: email,
+        };
+        localStorage.setItem("user", JSON.stringify(user));
 
         if (email === "adwoa@gmail.com" && password === "adwoa") {
-            alert("Login successful!"); 
-            window.location.href='request.html';
-        
-        } else if(email==="adwoa@gmail.com"&& password!="adwoa"){
-            alert("how can you forget your password");
-        document.getElementById('password').value=""
-
-        } else if(email==="admin@gmail.com" && password==="admin"){
+          alert("Login successful!");
+          window.location.href = "request.html";
+        } else if (email === "adwoa@gmail.com" && password != "adwoa") {
+          alert("how can you forget your password");
+          document.getElementById("password").value = "";
+        } else if (email === "admin@gmail.com" && password === "admin") {
           alert("let's make someone life hell by rejecting request");
-          window.location.href='admin.html';
-        }else{
+          window.location.href = "admin.html";
+        } else {
           alert("Oops, do you want to steal my system?.");
-        document.getElementById('email').value=""
-        document.getElementById('password').value=""
+          document.getElementById("email").value = "";
+          document.getElementById("password").value = "";
         }
       });
-     
     </script>
   </body>
 </html>
